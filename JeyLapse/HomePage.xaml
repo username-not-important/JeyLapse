@@ -1,0 +1,145 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="JeyLapse.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="clr-namespace:JeyLapse.Converters"
+    xmlns:operations="clr-namespace:JeyLapse.Operations"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" Title="JeyLapse">
+    <phone:PhoneApplicationPage.Resources>
+        <converters:DoubleToIntConverter x:Key="DoubleToIntConverter"/>
+        <converters:MinutesToStringConverter x:Key="MinutesToStringConverter"></converters:MinutesToStringConverter>
+
+        <operations:PowerSaverManager x:Key="PowerSaverManager"/>
+    </phone:PhoneApplicationPage.Resources>
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="BG.jpg" />
+        </Grid.Background>
+        <phone:Panorama Title="Jey Lapse" Foreground="#FF131313" FlowDirection="LeftToRight" Background="{x:Null}" Style="{StaticResource PanoramaStyle}">
+
+            <!--Panorama item one-->
+            <phone:PanoramaItem Header="Session">
+                <phone:PanoramaItem.Foreground>
+                    <SolidColorBrush Color="{StaticResource MainColor}"/>
+                </phone:PanoramaItem.Foreground>
+                <ScrollViewer VerticalAlignment="Top">
+                    <StackPanel>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Preferences" VerticalAlignment="Top" Foreground="{StaticResource DarkGrayBrush}" FontSize="26.667"/>
+                        <StackPanel>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Session Key" VerticalAlignment="Top" Foreground="#FF131313" FontSize="26.667" FontFamily="Segoe WP Light"/>
+                            <Grid>
+                                <TextBox x:Name="_BoxKey" VerticalAlignment="Top" Height="75"/>
+                                <TextBlock Text="* Added to File names." Margin="25,70,0,5" TextWrapping="Wrap" Foreground="#FF1F1F1F"></TextBlock>
+                            </Grid>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Interval (Seconds)" VerticalAlignment="Top" Foreground="#FF131313" FontSize="26.667" FontFamily="Segoe WP Light"/>
+                            <Grid>
+                                <Slider x:Name="_SliderInterval" VerticalAlignment="Top" Height="84" SmallChange="1" Maximum="15" Value="2" Minimum="2" Margin="0" Background="#FF1F1F1F">
+                                    <Slider.Foreground>
+                                        <SolidColorBrush Color="{StaticResource MainColor}"/>
+                                    </Slider.Foreground>
+                                </Slider>
+                                <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding Value, Converter={StaticResource DoubleToIntConverter}, ElementName=_SliderInterval}" VerticalAlignment="Top" Foreground="#FF1F1F1F" Margin="0,40,0,0" FontSize="48"/>
+                            </Grid>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Duration" VerticalAlignment="Top" Foreground="#FF131313" FontSize="26.667" FontFamily="Segoe WP Light"/>
+                            <Grid>
+                                <Slider x:Name="_SliderDuration" VerticalAlignment="Top" Height="84" SmallChange="1" Maximum="360" Margin="0" LargeChange="30" Background="#FF1F1F1F">
+                                    <Slider.Foreground>
+                                        <SolidColorBrush Color="{StaticResource MainColor}"/>
+                                    </Slider.Foreground>
+                                </Slider>
+                                <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding Value, Converter={StaticResource MinutesToStringConverter}, ElementName=_SliderDuration}" VerticalAlignment="Top" Foreground="#FF1F1F1F" Margin="0,40,0,0" FontSize="29.333"/>
+                            </Grid>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Flash" VerticalAlignment="Top" Foreground="#FF131313" FontSize="26.667" FontFamily="Segoe WP Light"/>
+                            <Grid>
+                                <StackPanel Orientation="Horizontal">
+                                    <RadioButton x:Name="_RadioFlashAuto" Content="Auto" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FF1F1F1F" BorderBrush="#FF1F1F1F"/>
+                                    <RadioButton x:Name="_RadioFlashOn" Content="ON" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FF1F1F1F" BorderBrush="#FF1F1F1F"/>
+                                    <RadioButton x:Name="_RadioFlashOff" Content="OFF" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FF1F1F1F" BorderBrush="#FF1F1F1F"/>
+                                </StackPanel>
+                            </Grid>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF131313" FontSize="26.667" FontFamily="Segoe WP Light">
+                                <TextBlock.Inlines>
+                                    <Run Text="Resolution"></Run>
+                                    <Run FontSize="14.667" Text="  NEW">
+                                        <Run.Foreground>
+                                            <SolidColorBrush Color="{StaticResource MainColor}"/>
+                                        </Run.Foreground>
+                                    </Run>
+                                </TextBlock.Inlines>
+                            </TextBlock>
+                            <Grid>
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                    <Button x:Name="_ButtonAspect" Click="_ButtonAspect_OnClick" Content="Click to Refresh" HorizontalAlignment="Center" VerticalAlignment="Top" Width="230" BorderBrush="#FF1F1F1F" Foreground="#FF1F1F1F"/>
+                                    <CheckBox x:Name="_CheckWideScreen" Content="Crop to 16:9 (Wide-Screen)" Foreground="#FF1F1F1F" BorderBrush="#FF1F1F1F" Background="#001F1F1F" Style="{StaticResource DarkCheckbox}"/>
+                                </StackPanel>
+                            </Grid>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF131313" FontSize="26.667" FontFamily="Segoe WP Light">
+                				<Run Text="Effects"/>
+                            </TextBlock>
+                            <Grid>
+                                <Button x:Name="_ButtonSetEffects" Content="Click to Set" HorizontalAlignment="Center" VerticalAlignment="Top" Width="230" BorderBrush="#FF1F1F1F" Foreground="#FF1F1F1F" Click="_ButtonSetEffects_Click"/>
+                            </Grid>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF131313" FontSize="26.667" FontFamily="Segoe WP Light">
+                				<Run Text="Power Saver"/>
+								<Run FontSize="14.667" Text="  SEE HELP">
+									<Run.Foreground>
+                						<SolidColorBrush Color="{StaticResource MainColor}"/>
+                					</Run.Foreground>
+								</Run>
+                            </TextBlock>
+                            <Grid>
+                                <StackPanel Orientation="Vertical">
+                                    <Button x:Name="_ButtonPower" Content="{Binding Source={StaticResource PowerSaverManager}, Path=CurrentProfile.Mode}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="230" BorderBrush="#FF1F1F1F" Foreground="#FF1F1F1F" Click="_ButtonPower_Click"/>
+                                    <TextBlock Text="{Binding Source={StaticResource PowerSaverManager}, Path=CurrentProfile.Description}" TextWrapping="Wrap"></TextBlock>
+                                    <CheckBox x:Name="_CheckWorkLock" Content="Work Under Lock Screen" HorizontalAlignment="Center" Foreground="#FF1F1F1F" BorderBrush="#FF1F1F1F" Background="#001F1F1F" Style="{StaticResource DarkCheckbox}"/>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Start" VerticalAlignment="Top" Foreground="#FF131313" FontSize="26.667"/>
+                        <Button x:Name="_ButtonStart" Content="Preview &amp; Start" HorizontalAlignment="Right" VerticalAlignment="Top" Width="215" Click="_ButtonStart_Click" Foreground="#FF1F1F1F" BorderBrush="#FF1F1F1F"/>
+                        <Button x:Name="_ButtonJeyLapseVideo" Content="Create Video" HorizontalAlignment="Right" VerticalAlignment="Top" Width="215" Foreground="#FF1F1F1F" BorderBrush="#FF1F1F1F" Click="_ButtonJeyLapseVideo_Click"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PanoramaItem>
+
+            <!--Panorama item two-->
+            <phone:PanoramaItem Header="Help">
+                <phone:PanoramaItem.Foreground>
+                    <SolidColorBrush Color="{StaticResource MainColor}"/>
+                </phone:PanoramaItem.Foreground>
+                <StackPanel>
+                    <Button x:Name="_HelpPersian" Content="Persian Help" Foreground="#FF131313" BorderBrush="#FF131313" Click="_HelpPersian_Click"/>
+                </StackPanel>
+            </phone:PanoramaItem>
+            <phone:PanoramaItem Header="About">
+                <phone:PanoramaItem.Foreground>
+                    <SolidColorBrush Color="{StaticResource MainColor}"/>
+                </phone:PanoramaItem.Foreground>
+                <ScrollViewer Height="532">
+                    <StackPanel Width="420">
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Version:" VerticalAlignment="Top" Foreground="#FF131313" Margin="20,0,0,0" FontSize="26.667"/>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="1.3.6" VerticalAlignment="Top" Foreground="#FF131313" Margin="155,0,0,0" FontSize="26.667" FontFamily="Segoe WP Light"/>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Designed and Developed by:" VerticalAlignment="Top" Foreground="#FF131313" Margin="20,0,0,0" FontSize="26.667"/>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Alireza Joonbakhsh" VerticalAlignment="Top" Foreground="#FF131313" Margin="155,0,0,0" FontSize="26.667" FontFamily="Segoe WP Light"/>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="(Urmia University)" VerticalAlignment="Top" Foreground="#FF131313" Margin="155,0,0,0" FontSize="24" FontFamily="Segoe WP Light"/>
+                        <Button x:Name="_ButtonRate" Click="_ButtonRate_OnClick" Content="Rate &amp; Review" Margin="20,20,20,0" BorderBrush="#FF131313" Foreground="#FF131313"/>
+                        <Button x:Name="_ButtonContact" Click="_ButtonContact_OnClick" Content="Contact me" Margin="20,0" BorderBrush="#FF131313" Foreground="#FF131313"/>
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="If you feel you like this free App and want to be a support for the developer, you can either donate any amount to the account below or just rate 5." VerticalAlignment="Top" Foreground="#FF131313" Margin="5,20,5,0" FontSize="26.667" FontFamily="Segoe WP Light"/>
+                        <Button x:Name="_ButtonDonate" Click="_ButtonDonate_OnClick" Content="Donate" Margin="20,15,20,0" BorderBrush="#FF131313" Foreground="#FF131313"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PanoramaItem>
+        </phone:Panorama>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

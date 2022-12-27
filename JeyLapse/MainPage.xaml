@@ -1,0 +1,486 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:JeyLapse"
+    x:Class="JeyLapse.MainPage"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    Name="Page"
+    shell:SystemTray.IsVisible="False" Foreground="#FF232323" Loaded="PhoneApplicationPage_Loaded">
+    <phone:PhoneApplicationPage.Resources>
+        <Storyboard x:Name="ProcessingStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_IconProcess">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuadraticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="_IconProcess">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-15"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuadraticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimation Duration="0:0:0.3" To="0.95" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="CameraCanvas" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <SineEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.3" To="0.95" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="CameraCanvas" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <SineEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_IconEffects">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuadraticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="_IconEffects">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-15"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuadraticEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="ProcessingFinishedStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_IconProcess">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="_IconProcess">
+                <SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="-15"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimation Duration="0:0:0.3" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="CameraCanvas" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <SineEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimation Duration="0:0:0.3" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="CameraCanvas" d:IsOptimized="True">
+                <DoubleAnimation.EasingFunction>
+                    <SineEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_IconEffects">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="_IconEffects">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-15"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="EyeBlinkStoryboard" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="viewbox">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="PageStartupStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="_jeyART">
+                <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="_jeyART">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1.5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="1.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="_jeyART">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1.5">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <QuarticEase EasingMode="EaseIn"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="1.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_jeylapse">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ExponentialEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_jeyART">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.8" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="_introGrid">
+                <DiscreteObjectKeyFrame KeyTime="0:0:2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.1">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="_jeylapse">
+                <DiscreteObjectKeyFrame KeyTime="0:0:2">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.1">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CameraCanvas">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="RightPanel">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_ButtonStart">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="_ButtonStart">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.1">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:2.4">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="SavedStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_IconSaved">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </phone:PhoneApplicationPage.Resources>
+    <Grid x:Name="LayoutRoot" Background="Black">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="CaptureStates">
+                <VisualStateGroup.Transitions>
+                    <VisualTransition GeneratedDuration="0"/>
+                    <VisualTransition From="Stopped" GeneratedDuration="0" To="Capturing">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.3" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_ButtonStart" d:IsOptimized="True">
+                                <DoubleAnimation.EasingFunction>
+                                    <CircleEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.3" To="1.2" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="_ButtonStart" d:IsOptimized="True">
+                                <DoubleAnimation.EasingFunction>
+                                    <CircleEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <DoubleAnimation Duration="0:0:0.3" To="1.2" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="_ButtonStart" d:IsOptimized="True">
+                                <DoubleAnimation.EasingFunction>
+                                    <CircleEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="_ButtonStart">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Collapsed</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_ButtonStop">
+                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="_ButtonStop">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Collapsed</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="_ButtonStop">
+                                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="2"/>
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="_ButtonStop">
+                                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="2"/>
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualTransition>
+                    <VisualTransition From="Capturing" GeneratedDuration="0" To="Stopped">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.2" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_ButtonStop" d:IsOptimized="True"/>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="_ButtonStop">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.2">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Collapsed</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="_ButtonStart">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Collapsed</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.1">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_ButtonStart">
+                                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0"/>
+                                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualTransition>
+                </VisualStateGroup.Transitions>
+                <VisualState x:Name="Capturing">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="_ButtonStart">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="_ButtonStop">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Visible</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Stopped"/>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="290"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- LOCALIZATION NOTE:
+            To localize the displayed strings copy their values to appropriately named
+            keys in the app's neutral language resource file (AppResources.resx) then
+            replace the hard-coded text value between the attributes' quotation marks
+            with the binding clause whose path points to that string name.
+
+            For example:
+
+                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+
+            This binding points to the template's string resource named "ApplicationTitle".
+
+            Adding supported languages in the Project Properties tab will create a
+            new resx file per language that can carry the translated values of your
+            UI strings. The binding in these examples will cause the value of the
+            attributes to be drawn from the .resx file that matches the
+            CurrentUICulture of the app at run time.
+         -->
+
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <!--ContentPanel - place additional content here-->
+
+        <!--Uncomment to see an alignment grid to help ensure your controls are
+            aligned on common boundaries.  The image has a top margin of -32px to
+            account for the System Tray. Set this to 0 (or remove the margin altogether)
+            if the System Tray is hidden.
+
+            Before shipping remove this XAML and the image itself.-->
+        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <Canvas x:Name="CameraCanvas" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+            <Canvas.RenderTransform>
+                <CompositeTransform/>
+            </Canvas.RenderTransform>
+            <Canvas.Background>
+                <VideoBrush x:Name="CameraBrush" />
+            </Canvas.Background>
+        </Canvas>
+        <Grid x:Name="_BlackGrid" Grid.ColumnSpan="2" Visibility="Collapsed" Tap="_BlackGrid_Tap" Background="Black"/>
+        <Grid x:Name="RightPanel" Width="290" Margin="0" HorizontalAlignment="Right" Background="#7F000000" Grid.Column="1">
+            <Grid x:Name="TitleBar" Height="40" VerticalAlignment="Top" Background="#4C000000">
+                <Viewbox x:Name="viewbox" Width="35" Height="35" HorizontalAlignment="Left" Margin="8,0,0,0" RenderTransformOrigin="0.5,0.5">
+                    <Viewbox.RenderTransform>
+                        <CompositeTransform/>
+                    </Viewbox.RenderTransform>
+                    <Canvas Width="80" Height="56">
+                        <Path Width="80" Height="56" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="#FFC3C3C3" Data="F1 M 40,0C 17.9088,0 0,28 0,28C 0,28 17.9088,56 40,56C 62.0912,56 80,28 80,28C 80,28 62.0912,0 40,0 Z M 40,53.3333C 22.416,53.3333 7.16733,33.5567 3.22986,27.9987C 7.16281,22.4368 22.3841,2.66666 40,2.66666C 57.584,2.66666 72.8327,22.4433 76.7701,28.0013C 72.8372,33.5632 57.6159,53.3333 40,53.3333 Z "/>
+                        <Path Width="32" Height="32" Canvas.Left="24" Canvas.Top="12" Stretch="Fill" Fill="#FFC3C3C3" Data="F1 M 40,12C 31.1635,12 24,19.1635 24,28C 24,36.8365 31.1635,44 40,44C 48.836,44 56,36.8365 56,28C 56,19.1635 48.836,12 40,12 Z M 40,41.3333C 32.6477,41.3333 26.6667,35.3523 26.6667,28C 26.6667,20.6477 32.6477,14.6667 40,14.6667C 47.3523,14.6667 53.3333,20.6477 53.3333,28C 53.3333,35.3523 47.3523,41.3333 40,41.3333 Z "/>
+                    </Canvas>
+                </Viewbox>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="JeyLapse - Capture Session" VerticalAlignment="Center" FontFamily="Segoe WP Light" Foreground="#FFC3C3C3" Margin="53,-2,0,0"/>
+            </Grid>
+            <StackPanel Margin="8,48,8,0" Orientation="Vertical">
+                <Grid x:Name="SettingsBar" Height="80" VerticalAlignment="Top" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="91.33333"/>
+                        <ColumnDefinition Width="91.33333"/>
+                        <ColumnDefinition Width="91.33333"/>
+                    </Grid.ColumnDefinitions>
+                    <local:SettingView x:Name="_SettingInterval" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Text="3 (s)" Image="/Assets/Icons/Icon_Interval.png"/>
+                    <local:SettingView x:Name="_SettingFlash" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Grid.Column="1" Text="OFF" Image="/Assets/Icons/Icon_Flash.png"/>
+                    <local:SettingView x:Name="_SettingDuration" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Grid.Column="2" Text="Unlimited" Image="/Assets/Icons/Icon_Duration.png"/>
+
+                </Grid>
+                <Grid Height="79" Margin="6,7,6,0">
+                    <Grid x:Name="ResBar" Background="#5AC3C3C3" HorizontalAlignment="Left" Width="170" Margin="0">
+                        <Border BorderBrush="#FFC3C3C3" BorderThickness="2" HorizontalAlignment="Center" Height="71" VerticalAlignment="Center" Width="160" CornerRadius="3" Background="#4C000000">
+                            <Grid>
+                                <TextBlock x:Name="_TextRes" TextWrapping="Wrap" Text="16:9" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFC3C3C3" FontSize="29.333"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <local:SettingView x:Name="_SettingEffects" Height="80" HorizontalAlignment="Right" VerticalAlignment="Center" Width="80" Text="0 Effects" Image="Assets/Icons/Icon_Effects.png"/>
+                </Grid>
+                <Grid x:Name="TimeBar" Height="79" VerticalAlignment="Top" Margin="6,7,6,0" Background="#5AC3C3C3">
+                    <TextBlock x:Name="_TextTimer" HorizontalAlignment="Center" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Center" Foreground="#FFC3C3C3" FontSize="56"/>
+                </Grid>
+                <Grid x:Name="FrameBar" Height="79" VerticalAlignment="Top" Margin="6,7,6,0" Background="#5AC3C3C3">
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="FRAME" VerticalAlignment="Top" Foreground="#FFC3C3C3" FontSize="16" Margin="7,7,0,0" FontFamily="Segoe WP Black"/>
+                    <TextBlock x:Name="_TextFrame" HorizontalAlignment="Right" TextWrapping="Wrap" Text="#0" VerticalAlignment="Center" Foreground="#FFC3C3C3" FontSize="56" Margin="0,12.758,27.7,12.241"/>
+                </Grid>
+                <Grid x:Name="BatteryBar" Height="79" VerticalAlignment="Top" Margin="6,7,6,0" Background="#5AC3C3C3">
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="BATTERY" VerticalAlignment="Top" Foreground="#FFC3C3C3" FontSize="16" Margin="7,7,0,0" FontFamily="Segoe WP Black"/>
+                    <TextBlock x:Name="_TextBattery" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FFC3C3C3" FontSize="56" Margin="0,12.758,27.7,12.241"/>
+                </Grid>
+            </StackPanel>
+            <Button x:Name="_ButtonStop" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="40" Height="40" Background="{x:Null}" Padding="0" Style="{StaticResource SquareButtonStyle}" Margin="0,0,12,12" Visibility="Collapsed" Click="_ButtonStop_Click" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <CompositeTransform/>
+                </Button.RenderTransform>
+                <Image Source="Assets/Icons/Icon_Stop.png" Stretch="Fill"/>
+            </Button>
+        </Grid>
+        <Button x:Name="_ButtonStart" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Height="120" Background="{x:Null}" Padding="0" Style="{StaticResource SquareButtonStyle}" Click="_ButtonStart_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <CompositeTransform/>
+            </Button.RenderTransform>
+            <Image Source="Assets/Icons/Icon_Start.png" Stretch="Fill"/>
+        </Button>
+        <Grid x:Name="_IconProcess" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="37" Margin="10,10,0,0" RenderTransformOrigin="0.5,0.5" Opacity="0">
+            <Grid.RenderTransform>
+                <CompositeTransform/>
+            </Grid.RenderTransform>
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/Icons/Icon_Process.png" Stretch="Fill"/>
+            </Grid.Background>
+        </Grid>
+        <Grid x:Name="_IconEffects" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="37" Margin="10,57,0,0" RenderTransformOrigin="0.5,0.5" Opacity="0">
+            <Grid.RenderTransform>
+                <CompositeTransform/>
+            </Grid.RenderTransform>
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/Icons/Icon_Effects.png" Stretch="Fill"/>
+            </Grid.Background>
+        </Grid>
+        <Grid x:Name="_IconSaved" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="37" Margin="55,10,0,0" RenderTransformOrigin="0.5,0.5" Opacity="0">
+            <Grid.RenderTransform>
+                <CompositeTransform/>
+            </Grid.RenderTransform>
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/Icons/Icon_Saved.png" Stretch="Uniform"/>
+            </Grid.Background>
+        </Grid>
+        <Grid x:Name="_introGrid" Grid.ColumnSpan="2" Background="#FF404040" d:IsHidden="True">
+            <TextBlock x:Name="_jeyART" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FF131313" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#MRT_Poster_9" FontSize="96" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform/>
+                </TextBlock.RenderTransform>
+                <TextBlock.Projection>
+                    <PlaneProjection/>
+                </TextBlock.Projection>
+				<Run Foreground="#FF29BD53" Text="جی"/>
+				<Run Foreground="#FF131313" Text="آرت"/>
+            </TextBlock>
+            <TextBlock x:Name="_jeylapse" HorizontalAlignment="Center" TextWrapping="Wrap" Text="JeyLapse" VerticalAlignment="Center" Foreground="#FF131313" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#Clarendon Hv BT" FontSize="48" Margin="0,245,0,0"/>
+        </Grid>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SessionProfiles>
+  <SessionProfile Key="ProfileDataVersion" Value="5"/>
+  <SessionProfile Key="Interval" Value="4"/>
+  <SessionProfile Key="Flash" Value="-1"/>
+  <SessionProfile Key="PowerSaver" Value="0"/>
+  <SessionProfile Key="Duration" Value="0"/>
+  <SessionProfile Key="Resolution" Value="0x0"/>
+  <SessionProfile Key="WideScreen" Value="0"/>
+  <SessionProfile Key="UnderLock" Value="0"/>
+  <SessionProfile Key="Key" Value=""/>
+</SessionProfiles>

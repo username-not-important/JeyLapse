@@ -1,0 +1,195 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="JeyLapse.HelpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"
+    mc:Ignorable="d">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <!--ContentPanel - place additional content here-->
+
+<!--ContentPanel - place additional content here-->
+    	<Grid x:Name="ContentPanel">
+    		<Grid x:Name="_0" Background="#FF232323">
+    			<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="نحوه ی کار با این برنامه:" VerticalAlignment="Top" Margin="20,70,20,0" FlowDirection="RightToLeft" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" FontSize="26.667" Foreground="White"/>
+    			<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="20,110,20,0" FlowDirection="RightToLeft" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" FontSize="26.667" Foreground="#FFBDBDBD">
+    				<Span>
+    					<Run Text="ابتدا در صفحه ی اول تنظیمات اولیه را وارد می کنید و سپس وارد مرحله ی تصویر برداری می شوید"/>
+    				</Span>
+    				<Span>
+    					<Run Text="."/>
+    				</Span>
+    			</TextBlock>
+    			<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="در صفحه ی تصویر برداری ابتدا مشخصاتی که ذکر شده را بررسی کنید سپس دوربین را جای ثابتی گذاشته و روی دکمه ی شروع کلیک کنید." VerticalAlignment="Top" Margin="20,200,20,0" FlowDirection="RightToLeft" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" FontSize="26.667" Foreground="#FFBDBDBD"/>
+    			<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="برنامه تصاویر را در پوشه ی دوربین شما ذخیره می کند و در نهایت می توانید آنها را به کامپیوتر انتقال داده و با نرم افزار های ویرایش ویدئو تبدیل به تایم لپس کنید." VerticalAlignment="Top" Margin="20,335,20,0" FlowDirection="RightToLeft" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" FontSize="26.667" Foreground="#FFBDBDBD"/>
+    		</Grid>
+    		<Grid x:Name="_1" Background="#FF232323">
+    			<Grid Margin="20,70,0,0" VerticalAlignment="Top">
+    				<Image Source="/Assets/Icons/Icon_Duration.png" Stretch="Fill" Height="48" Width="48" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+    				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Duration" VerticalAlignment="Top" Margin="60,4,0,0" FontSize="29.333" Foreground="#FFBDBDBD"/>
+    				<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="کل زمانی که به برنامه اجازه می دهید تصویر برداری کند" VerticalAlignment="Top" Margin="0,40,20,0" FontSize="29.333" Foreground="#FFBDBDBD" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" TextAlignment="Right" Width="430"/>
+    			</Grid>
+    			<Grid Margin="20,200,0,0" VerticalAlignment="Top">
+    				<Image Source="/Assets/Icons/Icon_Interval.png" Stretch="Fill" Height="48" Width="48" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+    				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Interval" VerticalAlignment="Top" Margin="60,4,0,0" FontSize="29.333" Foreground="#FFBDBDBD"/>
+    				<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="تصاویر هر چند ثانیه یکبار گرفته شوند؟" VerticalAlignment="Top" Margin="0,40,20,0" FontSize="29.333" Foreground="#FFBDBDBD" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" TextAlignment="Right" Width="430"/>
+    			</Grid>
+    			<Grid Margin="20,295,0,0" VerticalAlignment="Top">
+    				<Image Source="/Assets/Icons/Icon_Flash.png" Stretch="Fill" Height="40" Width="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,0,0,0"/>
+    				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Flash mode" VerticalAlignment="Top" Margin="60,4,0,0" FontSize="29.333" Foreground="#FFBDBDBD"/>
+    				<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="آیا برای هر تصویر فلش زده شود؟" VerticalAlignment="Top" Margin="0,40,20,0" FontSize="29.333" Foreground="#FFBDBDBD" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" TextAlignment="Right" Width="430"/>
+    			</Grid>
+    			<Grid Margin="20,395,0,0" VerticalAlignment="Top">
+    				<Image Source="Assets/Icons/Icon_Process.png" Stretch="Fill" Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0"/>
+    				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Processing Icon" VerticalAlignment="Top" Margin="60,4,0,0" FontSize="29.333" Foreground="#FFBDBDBD"/>
+    				<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="زمانی که این علامت را می بینید برنامه در حال پردازش تصویر گرفته شده است" VerticalAlignment="Top" Margin="0,40,20,0" FontSize="29.333" Foreground="#FFBDBDBD" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" TextAlignment="Right" Width="430"/>
+    			</Grid>
+    			<Grid Margin="20,525,0,0" VerticalAlignment="Top">
+    				<Image Source="Assets/Icons/Icon_Saved.png" Stretch="Fill" Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0"/>
+    				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Saved Icon" VerticalAlignment="Top" Margin="60,4,0,0" FontSize="29.333" Foreground="#FFBDBDBD"/>
+    				<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,40,20,0" FontSize="29.333" Foreground="#FFBDBDBD" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" TextAlignment="Right" Width="430">
+    					<Run Text="زمانی که این علامت را می بینید تصویر با موفقیت ذخیره شده است"/>
+    					<Run Text="."/>
+    				</TextBlock>
+    			</Grid>
+    			<Grid Margin="20,650,0,0" VerticalAlignment="Top">
+    				<Image Source="Assets/Icons/Icon_Effects.png" Stretch="Fill" Height="40" Width="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0"/>
+    				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Effects Icon" VerticalAlignment="Top" Margin="60,4,0,0" FontSize="29.333" Foreground="#FFBDBDBD"/>
+    				<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="زمانی که این علامت را می بینید برنامه در حال افزودن افکت ها می باشد." VerticalAlignment="Top" Margin="0,40,20,0" FontSize="29.333" Foreground="#FFBDBDBD" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" TextAlignment="Right" Width="430"/>
+    			</Grid>
+    		</Grid>
+    		<Grid x:Name="_2" Background="#FF232323">
+    			<ScrollViewer Margin="10,70,19,10">
+    				<Grid>
+    					<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="افزودن افکت به تصاویر" VerticalAlignment="Top" FlowDirection="RightToLeft" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" FontSize="26.667" Foreground="White"/>
+                        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,40,0,0" FlowDirection="RightToLeft" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" FontSize="26.667" Foreground="#FFBDBDBD" Text="قبل از شروع تصویر برداری وارد صفحه ی ثبت افکت شوید، افکتها را تنظیم کرده، برای پیش نمایش روی preview و برای ثبت روی دکمه ی apply کلیک کنید"/>
+                        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,218,1,0" FlowDirection="RightToLeft" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" FontSize="26.667" Foreground="#FFBDBDBD">
+                        	<Span>
+                        		<Run Text="بخاطر داشته باشید:"/>
+                        		<LineBreak/>
+                        	</Span>
+                        	<Run Text="1"/>
+                        	<Span>
+                        		<Run Text="- در هنگام تصویر برداری افکت ها روی صفحه نمایش نشان داده نمی شوند ولی درون تصویر ذخیره می شوند."/>
+                        	</Span>
+                        	<LineBreak/>
+                        	<Run Text="2"/>
+                        	<Run Text="- افزودن افکت به تصویر باعث کم شدن چند ثانیه ای"/>
+                        	<Run Text=" سرعت"/>
+                        	<Run Text=" تصویر برداری می شود بنابراین آگاهانه استفاده کنید."/>
+                        	<Span>
+                        		<LineBreak/>
+                        	</Span>
+                        	<Run Text="3"/>
+                        	<Span>
+                        		<Run Text="- این قابلیت به تازگی به برنامه افزوده شده، بنابراین "/>
+                        		<Run Text="جهت جلوگیری از هرگونه ایراد "/>
+                        		<Run Text="ابتدا خوب با آن اشنا "/>
+                        	</Span>
+                        	<Run Text="شده، تست کنید و "/>
+                        	<Span>
+                        		<Run Text="سپس استفاده کنید."/>
+                        	</Span>
+                        	<LineBreak/>
+                        	<Run Text="4"/>
+                        	<Run Text="-"/>
+                        	<Run Text="بعد از بستن برنامه تنظیمات افکت ها پاک می شوند تا اتفاقی روشن نمانند."/>
+    					</TextBlock>
+    				</Grid>
+    			</ScrollViewer>
+    		</Grid>
+            <Grid x:Name="_3" Background="#FF232323">
+                <ScrollViewer Margin="10,70,19,10">
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="سوالات متداول" VerticalAlignment="Top" FlowDirection="RightToLeft" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" FontSize="26.667" Foreground="White"/>
+                        <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,40,0,0" FlowDirection="RightToLeft" FontFamily="/JeyLapse;component/Fonts/Fonts.zip#B Roya" FontSize="26.667" Foreground="#FFBDBDBD">
+                        	<Run Text="چگونه از روی تصاویر ویدئو درست کنم؟">
+                        		<Run.Foreground>
+                        			<SolidColorBrush Color="#FF4AA835">
+                        				<SolidColorBrush.RelativeTransform>
+                        					<MatrixTransform Matrix="Identity"/>
+                        				</SolidColorBrush.RelativeTransform>
+                        				<SolidColorBrush.Transform>
+                        					<MatrixTransform Matrix="Identity"/>
+                        				</SolidColorBrush.Transform>
+                        			</SolidColorBrush>
+                        		</Run.Foreground>
+                        	</Run>
+                        	<LineBreak/>
+                        	<Run Text="- برای این منظور می توانید برنامه ی دیگر من "/>
+                        	<Run Text=" Jey Lapse Video "/>
+                        	<Run Text=" را از درون استور ویندوز فون دریافت کنید."/>
+                        	<Run Text="سپس به کمک کلید جلسه ای که برای تصاویرتان انتخاب کرده اید ویدئو را بسازید و لذت ببرید."/>
+                        	<LineBreak/>
+                        	<Run Text="نحوه ی عملکرد قابلیت ذخیره نیرو چگونه است؟">
+                        		<Run.Foreground>
+                        			<SolidColorBrush Color="#FF4AA835">
+                        				<SolidColorBrush.RelativeTransform>
+                        					<MatrixTransform Matrix="Identity"/>
+                        				</SolidColorBrush.RelativeTransform>
+                        				<SolidColorBrush.Transform>
+                        					<MatrixTransform Matrix="Identity"/>
+                        				</SolidColorBrush.Transform>
+                        			</SolidColorBrush>
+                        		</Run.Foreground>
+                        	</Run>
+                        	<LineBreak/>
+                        	<Run Text="- "/>
+                        	<Run Text="این قابلیت تنها روی دستگاه هایی که از تکنولوژی "/>
+                        	<Span>
+                        		<Run Text="Amoled"/>
+                        	</Span>
+                        	<Run Text=" استفاده می کنند قابل استفاده است. این دستگاهها زمانی که "/>
+                        	<Run Text="صفحه نمایش تصویر تیره ای را نمایش می دهد باتری "/>
+                        	<Run Text="کمتری استفاده می کنند."/>
+                        	<LineBreak/>
+                        	<Run Text="برای راحتی شما برنامه سه گونه تنظیمات را ارائه کرده."/>
+                        	<Run Text=" وضعیت خاموش (بدون ذخیره نیرو) ، وضعیت همیشه روشن (تا زمانی که روی صفحه کلیک نکنید تصویر تیره می ماند"/>
+                        	<Run Text=") و خودکار زمانی (بطور خودکار با فاصله ی زمانی صفحه را نمایش می دهد."/>
+    						<LineBreak/>
+                            <Run Text="کلید جلسه چیست؟">
+                        		<Run.Foreground>
+                        			<SolidColorBrush Color="#FF4AA835">
+                        				<SolidColorBrush.RelativeTransform>
+                        					<MatrixTransform Matrix="Identity"/>
+                        				</SolidColorBrush.RelativeTransform>
+                        				<SolidColorBrush.Transform>
+                        					<MatrixTransform Matrix="Identity"/>
+                        				</SolidColorBrush.Transform>
+                        			</SolidColorBrush>
+                        		</Run.Foreground>
+                        	</Run>
+                            <LineBreak/>
+                            <Run Text="- "/>
+                        	<Run Text=" کلیدی که انتخاب می کنید به نام تصاویر افزوده خواهد شد."/>
+                            <LineBreak/>
+                            <Run Text="بنابراین دقت کنید که از چه حروفی استفاده می کنید. این قابلیت در نسخه ی بعدی جهت ساختن ویدئو از روی تصاویر بکار گرفته می شود."/>
+                        </TextBlock>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+
+<!--ContentPanel - place additional content here-->
+    	<Grid VerticalAlignment="Top" Background="#FF232323">
+    		<StackPanel x:Name="_ItemsPanel" Height="70" VerticalAlignment="Top" Orientation="Horizontal" HorizontalAlignment="Center">
+    			<RadioButton x:Name="_Radio0" Content="" Style="{StaticResource EmptyNavRadio}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,0" Checked="_Radio0_Checked"/>
+    			<RadioButton x:Name="_Radio1" Content="" Style="{StaticResource EmptyNavRadio}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,10,0" Checked="_Radio1_Checked"/>
+    			<RadioButton x:Name="_Radio2" Content="" Style="{StaticResource EmptyNavRadio}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,19,10,19" Checked="_Radio2_Checked"/>
+                <RadioButton x:Name="_Radio3" Content="" Style="{StaticResource EmptyNavRadio}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,19,10,19" Checked="_Radio3_Checked"/>
+            </StackPanel>
+    	</Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,11 @@
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\Debug\JLEditorLib.dll
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\Debug\JLEditorLib.pdb
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\Debug\WriteableBitmapExWinPhone.dll
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\Debug\WriteableBitmapExWinPhoneXnaDependant.dll
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\Debug\WriteableBitmapExWinPhone.pdb
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\Debug\WriteableBitmapExWinPhone.xml
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\Debug\WriteableBitmapExWinPhoneXnaDependant.pdb
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\Debug\WriteableBitmapExWinPhoneXnaDependant.xml
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\obj\Debug\JLEditorLib.g.resources
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\obj\Debug\JLEditorLib.dll
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\obj\Debug\JLEditorLib.pdb

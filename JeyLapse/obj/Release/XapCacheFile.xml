@@ -1,0 +1,18 @@
+﻿<xapCache source="C:\Users\MyDear\Documents\Visual Studio 2013\Projects\JeyLapse\JeyLapse\Bin\Release\JeyLapse_Release_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="2015/05/02 03:46:26 PM">
+  <file source="C:\Users\MyDear\Documents\Visual Studio 2013\Projects\JeyLapse\JeyLapse\obj\Release\JeyLapse.dll" archivePath="JeyLapse.dll" lastWriteTime="2015/05/02 03:46:23 PM" />
+  <file source="C:\Users\MyDear\Documents\Visual Studio 2013\Projects\JeyLapse\JeyLapse\Assets\Icons\Icon_Duration.png" archivePath="Assets\Icons\Icon_Duration.png" lastWriteTime="2015/04/25 07:36:02 PM" />
+  <file source="C:\Users\MyDear\Documents\Visual Studio 2013\Projects\JeyLapse\JeyLapse\Assets\Icons\Icon_Flash.png" archivePath="Assets\Icons\Icon_Flash.png" lastWriteTime="2015/04/25 07:36:02 PM" />
+  <file source="C:\Users\MyDear\Documents\Visual Studio 2013\Projects\JeyLapse\JeyLapse\Assets\Icons\Icon_Interval.png" archivePath="Assets\Icons\Icon_Interval.png" lastWriteTime="2015/04/25 07:36:02 PM" />
+  <file source="C:\Users\MyDear\Documents\Visual Studio 2013\Projects\JeyLapse\JeyLapse\Session\DefaultSessionProfile.xml" archivePath="Session\DefaultSessionProfile.xml" lastWriteTime="2015/05/02 05:04:59 AM" />
+  <file source="C:\Users\MyDear\Documents\Visual Studio 2013\Projects\JeyLapse\JeyLapse\WriteableBitmapExWinPhone.dll" archivePath="WriteableBitmapExWinPhone.dll" lastWriteTime="2015/04/12 10:12:06 PM" />
+  <file source="C:\Users\MyDear\Documents\Visual Studio 2013\Projects\JeyLapse\JeyLapse\Bin\Release\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="2015/05/02 02:43:38 AM" />
+  <file source="C:\Users\MyDear\Documents\Visual Studio 2013\Projects\JeyLapse\JLEditorLib\Bin\Release\JLEditorLib.dll" archivePath="JLEditorLib.dll" lastWriteTime="2015/05/02 02:43:27 AM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Libraries\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="2013/01/01 06:57:00 PM" />
+  <file source="C:\Users\MyDear\Downloads\Compressed\WriteableBitmapEx_v1.5.0.0\WindowsPhone8\WriteableBitmapExWinPhoneXnaDependant.dll" archivePath="WriteableBitmapExWinPhoneXnaDependant.dll" lastWriteTime="2015/03/31 03:56:16 PM" />
+  <file source="C:\Users\MyDear\Downloads\Compressed\WriteableBitmapEx_v1.5.0.0\WindowsPhone8\WriteableBitmapExWinPhoneXnaDependant.xml" archivePath="WriteableBitmapExWinPhoneXnaDependant.xml" lastWriteTime="2015/03/31 03:56:16 PM" />
+  <file source="C:\Users\MyDear\Documents\Visual Studio 2013\Projects\JeyLapse\JeyLapse\LogoSmall.png" archivePath="LogoSmall.png" lastWriteTime="2015/03/29 02:28:11 AM" />
+  <file source="C:\Users\MyDear\Documents\Visual Studio 2013\Projects\JeyLapse\JeyLapse\Tile_Medium.png" archivePath="Tile_Medium.png" lastWriteTime="2015/03/29 02:29:41 AM" />
+  <file source="C:\Users\MyDear\Downloads\Compressed\WriteableBitmapEx_v1.5.0.0\WindowsPhone8\WriteableBitmapExWinPhone.dll" archivePath="WriteableBitmapExWinPhone.dll" lastWriteTime="2015/03/31 03:56:16 PM" />
+  <file source="C:\Users\MyDear\Downloads\Compressed\WriteableBitmapEx_v1.5.0.0\WindowsPhone8\WriteableBitmapExWinPhone.xml" archivePath="WriteableBitmapExWinPhone.xml" lastWriteTime="2015/03/31 03:56:16 PM" />
+  <file source="C:\Users\MyDear\Documents\Visual Studio 2013\Projects\JeyLapse\JeyLapse\Bin\Release\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2015/05/02 02:43:39 AM" />
+</xapCache>

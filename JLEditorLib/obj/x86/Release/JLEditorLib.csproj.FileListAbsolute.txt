@@ -1,0 +1,12 @@
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\x86\Release\JLEditorLib.dll
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\x86\Release\JLEditorLib.pdb
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\x86\Release\WriteableBitmapExWinPhone.dll
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\x86\Release\WriteableBitmapExWinPhoneXnaDependant.dll
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\x86\Release\WriteableBitmapExWinPhone.pdb
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\x86\Release\WriteableBitmapExWinPhone.xml
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\x86\Release\WriteableBitmapExWinPhoneXnaDependant.pdb
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\Bin\x86\Release\WriteableBitmapExWinPhoneXnaDependant.xml
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\obj\x86\Release\JLEditorLib.csprojResolveAssemblyReference.cache
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\obj\x86\Release\JLEditorLib.g.resources
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\obj\x86\Release\JLEditorLib.dll
+C:\Users\MyDear\documents\visual studio 2013\Projects\JeyLapse\JLEditorLib\obj\x86\Release\JLEditorLib.pdb
